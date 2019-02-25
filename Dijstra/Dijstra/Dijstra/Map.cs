@@ -18,30 +18,38 @@ namespace Dijstra
             YAmount = yAmount;
             MapArray = new Tile[xAmount, yAmount];
         }
+
+        void GetConnections(Tile Target)
+        {
+
+        }
     }
 
-    class Tile
+    abstract class Tile
     {
         bool Solid;
         int X, Y;
         int SetpsToGoal;
-        protected Tile[] Connections;
-        public Tile (bool solid, int x, int y)
+        string Symbol;
+        public Tile[] Connections = new Tile[4];
+        public Tile (bool solid, int x, int y, string symbol)
         {
             Solid = solid;
             X = x;
             Y = y;
+            Symbol = symbol;
         }
     }
     class Wall : Tile
     {
-        public Wall (int x, int y) : base(true,x,y)
+        public Wall (int x, int y, string _symbol) : base(true, x, y, _symbol)
         {
         }
     }
 
     class Player
     {
-
+        List<Tile> Route = new List<Tile>();
+        
     }
 }
