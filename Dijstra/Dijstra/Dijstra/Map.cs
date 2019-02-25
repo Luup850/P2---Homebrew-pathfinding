@@ -25,6 +25,19 @@ namespace Dijstra
         bool Solid;
         int X, Y;
         int SetpsToGoal;
+        protected Tile[] Connections;
+        public Tile (bool solid, int x, int y)
+        {
+            Solid = solid;
+            X = x;
+            Y = y;
+        }
+    }
+    class Wall : Tile
+    {
+        public Wall (int x, int y) : base(true,x,y)
+        {
+        }
     }
 
     class Player
