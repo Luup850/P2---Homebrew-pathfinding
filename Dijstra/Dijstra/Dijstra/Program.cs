@@ -10,6 +10,7 @@ namespace Dijstra
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
