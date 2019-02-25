@@ -8,9 +8,9 @@ namespace Dijstra
 {
     class Map
     {
-        int XAmount;
-        int YAmount;
-        Tile[,] MapArray;
+        public int XAmount;
+        public int YAmount;
+        public  Tile[,] MapArray;
 
         public Map(int xAmount, int yAmount)
         {
@@ -23,29 +23,31 @@ namespace Dijstra
         {
 
         }
+        public void MakeEverythingFloor()
+        {
+            for(int i = 0; i < XAmount; i++)
+            {
+                for(int n = 0; n < YAmount; n++)
+                {
+                    MapArray[i, n] = new Floor(i, n);
+                }
+            }
+        }
+        public void BuildWalls ()
+        {
+            for(int i = 0; i < YAmount; i++)
+            {
+                MapArray[i, 0] = new Wall(i,0);
+                MapArray[i, YAmount-1] = new Wall(i, YAmount-1);
+            }
+            for (int i = 0; i < XAmount; i++)
+            {
+                MapArray[0, i] = new Wall(0, i);
+                MapArray[XAmount-1, i] = new Wall(XAmount-1, i);
+            }
+        }
     }
 
-    abstract class Tile
-    {
-        bool Solid;
-        int X, Y;
-        int SetpsToGoal;
-        string Symbol;
-        public Tile[] Connections = new Tile[4];
-        public Tile (bool solid, int x, int y, string symbol)
-        {
-            Solid = solid;
-            X = x;
-            Y = y;
-            Symbol = symbol;
-        }
-    }
-    class Wall : Tile
-    {
-        public Wall (int x, int y, string _symbol) : base(true, x, y, _symbol)
-        {
-        }
-    }
 
     class Player
     {

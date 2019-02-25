@@ -10,6 +10,11 @@ namespace Dijstra
     {
         static void Main(string[] args)
         {
+            Map TestMap = new Map(20, 20);
+            MapPrinter TestPrinter = new MapPrinter();
+            TestMap.MakeEverythingFloor();
+            TestMap.BuildWalls();
+            TestPrinter.Print2DMap(TestMap);
 
         }
     }

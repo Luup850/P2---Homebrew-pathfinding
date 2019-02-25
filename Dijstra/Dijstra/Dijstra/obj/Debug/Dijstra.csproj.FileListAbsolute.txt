@@ -1,0 +1,7 @@
+C:\Users\Lars Jensen\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\bin\Debug\Dijstra.exe.config
+C:\Users\Lars Jensen\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\bin\Debug\Dijstra.exe
+C:\Users\Lars Jensen\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\bin\Debug\Dijstra.pdb
+C:\Users\Lars Jensen\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.csprojAssemblyReference.cache
+C:\Users\Lars Jensen\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.csproj.CoreCompileInputs.cache
+C:\Users\Lars Jensen\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.exe
+C:\Users\Lars Jensen\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.pdb
