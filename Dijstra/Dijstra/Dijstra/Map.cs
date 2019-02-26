@@ -11,6 +11,8 @@ namespace Dijstra
         public int XAmount;
         public int YAmount;
         public  Tile[,] MapArray;
+        public int GoalX;
+        public int GoalY;
 
         public Map(int xAmount, int yAmount)
         {
@@ -18,24 +20,33 @@ namespace Dijstra
             YAmount = yAmount;
             MapArray = new Tile[xAmount, yAmount];
         }
-
-        void GetConnections(Tile Target)
+        public void SetGoal(int x, int y)
         {
-            if(MapArray[Target.X, Target.Y+1 ].Solid == true)
+            GoalX = x;
+            GoalY = y;
+        } 
+
+        public void GetConnections(Tile Target)
+        {
+            if(MapArray[Target.X, Target.Y+1 ].Solid == false)
             {
                 Target.Connections[0] = MapArray[Target.X, Target.Y + 1];
+                MapArray[Target.X, Target.Y + 1].SetStepsToGoal(GoalX,GoalY);
             }
-            if (MapArray[Target.X, Target.Y-1 ].Solid == true)
+            if (MapArray[Target.X, Target.Y-1 ].Solid == false)
             {
                 Target.Connections[1] = MapArray[Target.X, Target.Y - 1];
+                MapArray[Target.X, Target.Y - 1].SetStepsToGoal(GoalX, GoalY);
             }
-            if (MapArray[Target.X+1, Target.Y].Solid == true)
+            if (MapArray[Target.X+1, Target.Y].Solid == false)
             {
                 Target.Connections[2] = MapArray[Target.X + 1, Target.Y];
+                MapArray[Target.X+1, Target.Y].SetStepsToGoal(GoalX, GoalY);
             }
-            if (MapArray[Target.X-1, Target.Y].Solid == true)
+            if (MapArray[Target.X-1, Target.Y].Solid == false)
             {
                 Target.Connections[3] = MapArray[Target.X - 1, Target.Y];
+                MapArray[Target.X-1, Target.Y].SetStepsToGoal(GoalX, GoalY);
             }
         }
         public void MakeEverythingFloor()

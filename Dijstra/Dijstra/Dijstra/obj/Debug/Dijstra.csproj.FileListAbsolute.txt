@@ -12,3 +12,10 @@ D:\GitHub\SchoolAssignments\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstr
 D:\GitHub\SchoolAssignments\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.csproj.CoreCompileInputs.cache
 D:\GitHub\SchoolAssignments\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.exe
 D:\GitHub\SchoolAssignments\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.pdb
+C:\Users\larsd\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\bin\Debug\Dijstra.exe.config
+C:\Users\larsd\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\bin\Debug\Dijstra.exe
+C:\Users\larsd\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\bin\Debug\Dijstra.pdb
+C:\Users\larsd\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.csprojAssemblyReference.cache
+C:\Users\larsd\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.csproj.CoreCompileInputs.cache
+C:\Users\larsd\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.exe
+C:\Users\larsd\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.pdb

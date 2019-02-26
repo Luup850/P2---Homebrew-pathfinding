@@ -8,9 +8,9 @@ namespace Dijstra
 {
     abstract class Tile
     {
-        bool Solid;
+        public bool Solid;
         public int X, Y;
-        int SetpsToGoal;
+        public int StepsToGoal;
         public char Symbol;
         public Tile[] Connections = new Tile[4];
         public Tile(bool solid, int x, int y, char symbol)
@@ -20,6 +20,21 @@ namespace Dijstra
             Y = y;
             Symbol = symbol;
         }
+        public void SetStepsToGoal(int gX, int gY)
+        {
+            gX -= X;
+            gY -= Y;
+            if (gX < 0)
+            {
+                gX *= -1;
+            }
+            if (gY < 0)
+            {
+                gY *= -1;
+            }
+            StepsToGoal = gX + gY;
+        }
+
     }
     class Wall : Tile
     {
@@ -29,7 +44,7 @@ namespace Dijstra
     }
     class Floor : Tile
     {
-        public Floor(int x, int y) : base(false,x,y,'f')
+        public Floor(int x, int y) : base(false,x,y,'.')
         {
         }
     }
