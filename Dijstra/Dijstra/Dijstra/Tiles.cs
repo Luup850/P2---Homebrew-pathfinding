@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Dijstra
-{ 
+{
     abstract class Tile
     {
         bool Solid;
-        int X, Y;
+        public int X, Y;
         int SetpsToGoal;
         public char Symbol;
         public Tile[] Connections = new Tile[4];
