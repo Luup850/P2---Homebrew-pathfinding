@@ -57,7 +57,7 @@ namespace Dijstra
                 {
                     x = Route.ElementAt((int)Branches.Last()).X;
                     y = Route.ElementAt((int)Branches.Last()).Y;
-                    Route.RemoveRange((int)Branches.Last(), Route.Count-(int)Branches.Last()-1);
+                    Route.RemoveRange((int)Branches.Last()+1, Route.Count-(int)Branches.Last()-1);
                     Branches.RemoveAt((int)Branches.Last());
                 }
                 AmountOfConnections = 0;
