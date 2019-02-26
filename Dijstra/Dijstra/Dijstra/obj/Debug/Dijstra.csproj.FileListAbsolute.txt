@@ -5,3 +5,10 @@ C:\Users\Lars Jensen\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\De
 C:\Users\Lars Jensen\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.csproj.CoreCompileInputs.cache
 C:\Users\Lars Jensen\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.exe
 C:\Users\Lars Jensen\Documents\GitHub\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.pdb
+D:\GitHub\SchoolAssignments\P2TestStuff\Dijstra\Dijstra\Dijstra\bin\Debug\Dijstra.exe.config
+D:\GitHub\SchoolAssignments\P2TestStuff\Dijstra\Dijstra\Dijstra\bin\Debug\Dijstra.exe
+D:\GitHub\SchoolAssignments\P2TestStuff\Dijstra\Dijstra\Dijstra\bin\Debug\Dijstra.pdb
+D:\GitHub\SchoolAssignments\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.csprojAssemblyReference.cache
+D:\GitHub\SchoolAssignments\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.csproj.CoreCompileInputs.cache
+D:\GitHub\SchoolAssignments\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.exe
+D:\GitHub\SchoolAssignments\P2TestStuff\Dijstra\Dijstra\Dijstra\obj\Debug\Dijstra.pdb
