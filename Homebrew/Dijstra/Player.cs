@@ -9,7 +9,7 @@ namespace Dijstra
     class Player
     {
         List<Tile> Route = new List<Tile>();
-        List<long> Branches = new List<long>(); 
+        List<int> Branches = new List<int>(); 
         int BestOption;
         int ShortestDistance = -1;
         int AmountOfConnections = 0;
@@ -17,7 +17,6 @@ namespace Dijstra
         {
             int PX;
             Route.Add(map.MapArray[x, y]);
-            Branches.Add(Route.LongCount() - 1);
             while (map.GoalX != x && map.GoalY != y )
             {
                 map.MapArray[x, y].Solid = true;
@@ -42,11 +41,12 @@ namespace Dijstra
                 }
                 if (AmountOfConnections != 0)
                 {
-                    Route.Add(map.MapArray[x, y].Connections[BestOption]);
                     if (AmountOfConnections > 1)
                     {
-                        Branches.Add(Route.LongCount() - 1);
+                        Branches.Add(Route.Count() - 1);
                     }
+                    Route.Add(map.MapArray[x, y].Connections[BestOption]);
+
                     ShortestDistance = -1;
                     AmountOfConnections = 0;
                     PX = x;
@@ -55,9 +55,9 @@ namespace Dijstra
                 }
                 else
                 {
-                    x = Route.ElementAt((int)Branches.Last()).X;
-                    y = Route.ElementAt((int)Branches.Last()).Y;
-                    Route.RemoveRange((int)Branches.Last()+1, Route.Count-(int)Branches.Last()-1);
+                    x = Route.ElementAt(Branches.Last()).X;
+                    y = Route.ElementAt(Branches.Last()).Y;
+                    Route.RemoveRange(Branches.Last()+1, Route.Count-Branches.Last()-1);
                     Branches.RemoveAt(Branches.Count()-1);
                 }
                 AmountOfConnections = 0;
