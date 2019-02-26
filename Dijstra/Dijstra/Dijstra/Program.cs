@@ -16,6 +16,7 @@ namespace Dijstra
             TestMap.BuildWalls();
             TestPrinter.Print2DMap(TestMap);
 
+            Console.ReadKey();
         }
     }
 }
