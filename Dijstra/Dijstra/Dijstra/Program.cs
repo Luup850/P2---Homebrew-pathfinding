@@ -23,7 +23,6 @@ namespace Dijstra
             TestMap.MapArray[4, 13] = new Wall(4, 13);
             TestMap.MapArray[4, 12] = new Wall(4, 12);
             TestMap.MapArray[3, 12] = new Wall(3, 12);
-            TestMap.MapArray[2, 12] = new Wall(2, 12);
 
             TestDude.FindPath(TestMap, 1, 1);
             TestPrinter.Print2DMap(TestMap);
