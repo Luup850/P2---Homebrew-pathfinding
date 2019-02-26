@@ -1,0 +1,7 @@
+D:\GitHub\P2TestStuff\Homebrew\Dijstra\bin\Debug\Dijstra.exe.config
+D:\GitHub\P2TestStuff\Homebrew\Dijstra\bin\Debug\Dijstra.exe
+D:\GitHub\P2TestStuff\Homebrew\Dijstra\bin\Debug\Dijstra.pdb
+D:\GitHub\P2TestStuff\Homebrew\Dijstra\obj\Debug\HomeBrew.csprojAssemblyReference.cache
+D:\GitHub\P2TestStuff\Homebrew\Dijstra\obj\Debug\HomeBrew.csproj.CoreCompileInputs.cache
+D:\GitHub\P2TestStuff\Homebrew\Dijstra\obj\Debug\Dijstra.exe
+D:\GitHub\P2TestStuff\Homebrew\Dijstra\obj\Debug\Dijstra.pdb
