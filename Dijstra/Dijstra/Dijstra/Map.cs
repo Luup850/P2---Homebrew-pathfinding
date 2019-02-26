@@ -21,7 +21,22 @@ namespace Dijstra
 
         void GetConnections(Tile Target)
         {
-
+            if(MapArray[Target.X, Target.Y+1 ].Solid == true)
+            {
+                Target.Connections[0] = MapArray[Target.X, Target.Y + 1];
+            }
+            if (MapArray[Target.X, Target.Y-1 ].Solid == true)
+            {
+                Target.Connections[1] = MapArray[Target.X, Target.Y - 1];
+            }
+            if (MapArray[Target.X+1, Target.Y].Solid == true)
+            {
+                Target.Connections[2] = MapArray[Target.X + 1, Target.Y];
+            }
+            if (MapArray[Target.X-1, Target.Y].Solid == true)
+            {
+                Target.Connections[3] = MapArray[Target.X - 1, Target.Y];
+            }
         }
         public void MakeEverythingFloor()
         {
@@ -49,9 +64,5 @@ namespace Dijstra
     }
 
 
-    class Player
-    {
-        List<Tile> Route = new List<Tile>();
-        
-    }
+
 }

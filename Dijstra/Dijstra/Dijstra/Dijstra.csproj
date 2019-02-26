@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="3DMap.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Tiles.cs" />
     <Compile Include="MapPrinter.cs" />
     <Compile Include="Map.cs" />

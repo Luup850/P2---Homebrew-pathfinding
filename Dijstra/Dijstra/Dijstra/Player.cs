@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Dijstra
 {
-    class Class1
+    class Player
     {
+        List<Tile> Route = new List<Tile>();
     }
 }
