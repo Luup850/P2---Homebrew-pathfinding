@@ -8,5 +8,12 @@ namespace Dijstra
 {
     class Dijkstra
     {
+        List<Node> ShortestPath = new List<Node>();
+        class Node
+        {
+            int StepsToStart = 0;
+            Node LastNode;
+
+        }
     }
 }
