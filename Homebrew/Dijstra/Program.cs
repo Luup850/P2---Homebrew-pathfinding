@@ -12,7 +12,7 @@ namespace Dijstra
         {
             Map TestMap = new Map(200, 200);
             MapPrinter TestPrinter = new MapPrinter();
-            Player TestDude = new Player();
+            Player TestDude = new Player(4);
             TestMap.MakeEverythingFloor();
             TestMap.BuildWalls();
             TestMap.SetGoal(180, 117);

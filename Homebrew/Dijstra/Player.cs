@@ -13,6 +13,7 @@ namespace Dijstra
         int BestOption;
         int ShortestDistance = -1;
         int AmountOfConnections = 0;
+        int MaxConnections;
         public void FindPath(Map map, int x, int y)
         {
             int PX;
@@ -21,7 +22,7 @@ namespace Dijstra
             {
                 map.MapArray[x, y].Solid = true;
                 map.GetConnections(map.MapArray[x,y]);
-                for(int i = 0; i < 4;i++)
+                for(int i = 0; i < MaxConnections;i++)
                 {
                     if (map.MapArray[x, y].Connections[i] != null && map.MapArray[x, y].Connections[i].Solid != true)
                     {
@@ -69,6 +70,10 @@ namespace Dijstra
                 Finish.Symbol = 'p';
             }
 
+        }
+        public Player (int maxConnections)
+        {
+            MaxConnections = maxConnections;
         }
     }
 }
