@@ -10,10 +10,13 @@ namespace Dijstra
     {
         Queue<Tile> SearchArea = new Queue<Tile>();
         Tile NextTile;
+
         override public void FindPath(Map map, int x, int y)
         {
             int PX;
-            Route.Add(map.MapArray[x, y]);
+            int AwayFromstart;
+            map.MapArray[x, y].StepsFromStart = 0;
+            map.MapArray[x, y].Visited = true;
             while (map.GoalX != x || map.GoalY != y)
             {
 
@@ -25,7 +28,7 @@ namespace Dijstra
                     {
                         SearchArea.Enqueue(map.MapArray[x, y].Connections[i]);
                         
-                        map.MapArray[x, y].Connections[i].Solid = true;
+                        map.MapArray[x, y].Connections[i].Visited = true;
                     }
                 }
 
@@ -33,7 +36,7 @@ namespace Dijstra
                 PX = x;
                 x = NextTile.X;
                 y = NextTile.Y;
-                Route.Add(map.MapArray[x, y]);
+                AwayFromstart = NextTile.StepsFromStart;
             }
             foreach (Tile Finish in Route)
             {

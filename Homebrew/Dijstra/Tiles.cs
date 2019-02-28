@@ -11,6 +11,8 @@ namespace Dijstra
         public bool Solid;
         public int X, Y;
         public int StepsToGoal;
+        public int StepsFromStart;
+        public bool Visited;
         public char Symbol;
         public Tile[] Connections = new Tile[4];
         public Tile(bool solid, int x, int y, char symbol)
