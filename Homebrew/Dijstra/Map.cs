@@ -26,26 +26,26 @@ namespace Dijstra
             GoalY = y;
         } 
 
-        public void GetConnections(Tile Target)
+         virtual public void GetConnections(Tile Target)
         {
             if(MapArray[Target.X, Target.Y+1 ].Solid == false)
             {
-                Target.Connections[0] = MapArray[Target.X, Target.Y + 1];
+                Target.Connections.Add(MapArray[Target.X, Target.Y + 1]);
                 MapArray[Target.X, Target.Y + 1].SetStepsToGoal(GoalX,GoalY);
             }
             if (MapArray[Target.X, Target.Y-1 ].Solid == false)
             {
-                Target.Connections[1] = MapArray[Target.X, Target.Y - 1];
+                Target.Connections.Add(MapArray[Target.X, Target.Y - 1]);
                 MapArray[Target.X, Target.Y - 1].SetStepsToGoal(GoalX, GoalY);
             }
             if (MapArray[Target.X+1, Target.Y].Solid == false)
             {
-                Target.Connections[2] = MapArray[Target.X + 1, Target.Y];
+                Target.Connections.Add(MapArray[Target.X + 1, Target.Y]);
                 MapArray[Target.X+1, Target.Y].SetStepsToGoal(GoalX, GoalY);
             }
             if (MapArray[Target.X-1, Target.Y].Solid == false)
             {
-                Target.Connections[3] = MapArray[Target.X - 1, Target.Y];
+                Target.Connections.Add(MapArray[Target.X - 1, Target.Y]);
                 MapArray[Target.X-1, Target.Y].SetStepsToGoal(GoalX, GoalY);
             }
         }

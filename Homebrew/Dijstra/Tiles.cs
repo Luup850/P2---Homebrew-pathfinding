@@ -15,7 +15,7 @@ namespace Dijstra
         public int TotalCost;
         public bool Visited;
         public char Symbol;
-        public Tile[] Connections = new Tile[4];
+        public List<Tile> Connections = new List<Tile>();
         public Tile(bool solid, int x, int y, char symbol)
         {
             Solid = solid;
@@ -39,7 +39,7 @@ namespace Dijstra
         }
         public void CalcTotalCost()
         {
-            TotalCost = StepsFromStart + StepsToGoal;
+            TotalCost = StepsFromStart+2*StepsToGoal;
         }
 
     }

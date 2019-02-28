@@ -13,7 +13,6 @@ namespace Dijstra
         protected int BestOption;
         protected int ShortestDistance = -1;
         protected int AmountOfConnections = 0;
-        protected int MaxConnections;
         public int NodesVisited = 0;
         virtual public void FindPath(Map map, int x, int y)
         {
@@ -23,19 +22,19 @@ namespace Dijstra
             {
                 map.MapArray[x, y].Solid = true;
                 map.GetConnections(map.MapArray[x,y]);
-                for(int i = 0; i < MaxConnections;i++)
+                for(int i = 0; i < map.MapArray[x, y].Connections.Count; i++)
                 {
-                    if (map.MapArray[x, y].Connections[i] != null && map.MapArray[x, y].Connections[i].Solid != true)
+                    if (map.MapArray[x, y].Connections.ElementAt(i) != null && map.MapArray[x, y].Connections.ElementAt(i).Solid != true)
                     {
                         if (ShortestDistance == -1 )
                         {
-                            ShortestDistance = map.MapArray[x, y].Connections[i].StepsToGoal;
+                            ShortestDistance = map.MapArray[x, y].Connections.ElementAt(i).StepsToGoal;
                             BestOption = i;
                             
                         }
-                        else if (ShortestDistance > map.MapArray[x, y].Connections[i].StepsToGoal)
+                        else if (ShortestDistance > map.MapArray[x, y].Connections.ElementAt(i).StepsToGoal)
                         {
-                            ShortestDistance = map.MapArray[x, y].Connections[i].StepsToGoal;
+                            ShortestDistance = map.MapArray[x, y].Connections.ElementAt(i).StepsToGoal;
                             BestOption = i;
                         }
                         AmountOfConnections++;
@@ -47,13 +46,13 @@ namespace Dijstra
                     {
                         Branches.Add(Route.Count() - 1);
                     }
-                    Route.Add(map.MapArray[x, y].Connections[BestOption]);
+                    Route.Add(map.MapArray[x, y].Connections.ElementAt(BestOption));
 
                     ShortestDistance = -1;
                     AmountOfConnections = 0;
                     PX = x;
-                    x = map.MapArray[PX, y].Connections[BestOption].X;
-                    y = map.MapArray[PX, y].Connections[BestOption].Y;
+                    x = map.MapArray[PX, y].Connections.ElementAt(BestOption).X;
+                    y = map.MapArray[PX, y].Connections.ElementAt(BestOption).Y;
                 }
                 else
                 {
@@ -72,9 +71,8 @@ namespace Dijstra
             }
 
         }
-        public Player (int maxConnections)
+        public Player ()
         {
-            MaxConnections = maxConnections;
         }
     } 
 

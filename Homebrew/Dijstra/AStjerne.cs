@@ -21,18 +21,17 @@ namespace Dijstra
             while (map.GoalX != x || map.GoalY != y)
             {
                 map.GetConnections(map.MapArray[x, y]);
-                for (int i = 0; i < MaxConnections; i++)
+                for (int i = 0; i < map.MapArray[x, y].Connections.Count; i++)
                 {
-                    if (map.MapArray[x, y].Connections[i] != null && map.MapArray[x, y].Connections[i].Solid != true
-                        && map.MapArray[x, y].Connections[i].Visited != true)
+                    if (map.MapArray[x, y].Connections.ElementAt(i).Visited != true)
                     {
 
                         Open.Add(map.MapArray[x, y].Connections[i]);
                         
 
-                        map.MapArray[x, y].Connections[i].Visited = true;
-                        map.MapArray[x, y].Connections[i].StepsFromStart = AwayFromstart + 1;
-                        map.MapArray[x, y].Connections[i].CalcTotalCost();
+                        map.MapArray[x, y].Connections.ElementAt(i).Visited = true;
+                        map.MapArray[x, y].Connections.ElementAt(i).StepsFromStart = AwayFromstart + 1;
+                        map.MapArray[x, y].Connections.ElementAt(i).CalcTotalCost();
                     }
                 }
                 foreach (Tile tile in Open)
@@ -44,7 +43,7 @@ namespace Dijstra
                     }
                     counter++;
                 }
-                Route.Add(Open.ElementAt(BestOption));
+                //Route.Add(Open.ElementAt(BestOption)); // Debug statement, shows all tiles searched
                 NodesVisited++;
                 NextTile = Open.ElementAt(BestOption);
                 Open.RemoveAt(BestOption);
@@ -60,28 +59,28 @@ namespace Dijstra
             while (AwayFromstart != 0)
             {
                 map.GetConnections(map.MapArray[x, y]);
-                for (int i = 0; i < MaxConnections; i++)
+                for (int i = 0; i < map.MapArray[x, y].Connections.Count; i++)
                 {
-                    if (map.MapArray[x, y].Connections[i] != null && map.MapArray[x, y].Connections[i].Visited == true)
+                    if ( map.MapArray[x, y].Connections.ElementAt(i).Visited == true)
                     {
-                        if (map.MapArray[x, y].Connections[i].StepsFromStart < AwayFromstart)
+                        if (map.MapArray[x, y].Connections.ElementAt(i).StepsFromStart < AwayFromstart)
                         {
-                            Route.Add(map.MapArray[x, y].Connections[i]);
-                            AwayFromstart = map.MapArray[x, y].Connections[i].StepsFromStart;
-                            NextTile = map.MapArray[x, y].Connections[i];
+                            Route.Add(map.MapArray[x, y].Connections.ElementAt(i)); 
+                            AwayFromstart = map.MapArray[x, y].Connections.ElementAt(i).StepsFromStart;
+                            NextTile = map.MapArray[x, y].Connections.ElementAt(i);
                             x = NextTile.X;
                             y = NextTile.Y;
                         }
                     }
                 }
             }
-            foreach (Tile Finish in Route)
+            for(int i = 0; i < Route.Count;i++) 
             {
-                Finish.Symbol = 'p';
+                Route.ElementAt(i).Symbol = 'p';
             }
         }
 
-        public AStjerne (int maxConnections) : base(maxConnections)
+        public AStjerne () : base()
         {
         }
     }

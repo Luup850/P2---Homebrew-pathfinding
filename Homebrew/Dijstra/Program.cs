@@ -12,17 +12,17 @@ namespace Dijstra
         {
             var watch = new System.Diagnostics.Stopwatch();
             
-            Map TestMap = new Map(20, 20);
+            Map TestMap = new DiagonalMap(200, 200);
             MapPrinter TestPrinter = new MapPrinter();
-            Player TestDude = new AStjerne(4);
+            Player TestDude = new AStjerne();
             TestMap.MakeEverythingFloor();
             TestMap.BuildWalls();
-            TestMap.SetGoal(18, 18);
+            TestMap.SetGoal(100, 20);
             watch.Start();
             TestDude.FindPath(TestMap, 1, 1);
             watch.Stop();
-            TestPrinter.Print2DMap(TestMap);
-            Console.WriteLine("It took "+ watch.ElapsedMilliseconds + " and " + TestDude.NodesVisited +" Nodes Visited");
+            //TestPrinter.Print2DMap(TestMap);
+            Console.WriteLine("It took "+ watch.Elapsed.Milliseconds + " and " + TestDude.NodesVisited +" Nodes Visited");
 
             Console.ReadKey();
         }

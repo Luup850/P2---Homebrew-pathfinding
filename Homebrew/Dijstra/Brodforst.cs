@@ -20,37 +20,36 @@ namespace Dijstra
             {
 
                 map.GetConnections(map.MapArray[x, y]);
-                for (int i = 0; i < MaxConnections;i++)
+                for (int i = 0; i < map.MapArray[x, y].Connections.Count; i++)
                 {
-                    if (map.MapArray[x, y].Connections[i] != null && map.MapArray[x, y].Connections[i].Solid != true
-                        && map.MapArray[x, y].Connections[i].Visited != true)
+                    if ( map.MapArray[x, y].Connections.ElementAt(i).Visited != true)
                     {
                         SearchArea.Enqueue(map.MapArray[x, y].Connections[i]);
                         
-                        map.MapArray[x, y].Connections[i].Visited = true;
-                        map.MapArray[x, y].Connections[i].StepsFromStart = AwayFromstart + 1;
+                        map.MapArray[x, y].Connections.ElementAt(i).Visited = true;
+                        map.MapArray[x, y].Connections.ElementAt(i).StepsFromStart = AwayFromstart + 1;
                     }
                 }
 
                 NextTile = SearchArea.Dequeue();
                 x = NextTile.X;
                 y = NextTile.Y;
-                Route.Add(map.MapArray[x, y]);
+                //Route.Add(map.MapArray[x, y]); //Debug statement to show full scan area
                 NodesVisited++;
                 AwayFromstart = NextTile.StepsFromStart;
             }
             map.MapArray[x, y].Symbol = 'm';
             while (AwayFromstart != 0) {
                 map.GetConnections(map.MapArray[x, y]);
-                for (int i = 0; i < MaxConnections; i++)
+                for (int i = 0; i < map.MapArray[x, y].Connections.Count; i++)
                 {
-                    if (map.MapArray[x, y].Connections[i] != null && map.MapArray[x, y].Connections[i].Visited == true)
+                    if ( map.MapArray[x, y].Connections.ElementAt(i).Visited == true)
                     {
-                        if (map.MapArray[x, y].Connections[i].StepsFromStart < AwayFromstart)
+                        if (map.MapArray[x, y].Connections.ElementAt(i).StepsFromStart < AwayFromstart)
                         {
-                            Route.Add(map.MapArray[x, y].Connections[i]);
-                            AwayFromstart = map.MapArray[x, y].Connections[i].StepsFromStart;
-                            NextTile = map.MapArray[x, y].Connections[i];
+                            Route.Add(map.MapArray[x, y].Connections.ElementAt(i));
+                            AwayFromstart = map.MapArray[x, y].Connections.ElementAt(i).StepsFromStart;
+                            NextTile = map.MapArray[x, y].Connections.ElementAt(i);
                             x = NextTile.X;
                             y = NextTile.Y;
                         }
@@ -64,7 +63,7 @@ namespace Dijstra
 
         }
 
-        public Brodforst(int maxConnections) : base(maxConnections)
+        public Brodforst() : base()
         {
         }
     }
