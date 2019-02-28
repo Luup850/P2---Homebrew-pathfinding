@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="3DMap.cs" />
     <Compile Include="Brodforst.cs" />
+    <Compile Include="AStjerne.cs" />
+    <Compile Include="Dijkstra.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Tiles.cs" />
     <Compile Include="MapPrinter.cs" />

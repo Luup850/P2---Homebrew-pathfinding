@@ -14,6 +14,7 @@ namespace Dijstra
         protected int ShortestDistance = -1;
         protected int AmountOfConnections = 0;
         protected int MaxConnections;
+        public int NodesVisited = 0;
         virtual public void FindPath(Map map, int x, int y)
         {
             int PX;

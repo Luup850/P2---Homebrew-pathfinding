@@ -12,6 +12,7 @@ namespace Dijstra
         public int X, Y;
         public int StepsToGoal;
         public int StepsFromStart;
+        public int TotalCost;
         public bool Visited;
         public char Symbol;
         public Tile[] Connections = new Tile[4];
@@ -35,6 +36,10 @@ namespace Dijstra
                 gY *= -1;
             }
             StepsToGoal = gX + gY;
+        }
+        public void CalcTotalCost()
+        {
+            TotalCost = StepsFromStart + StepsToGoal;
         }
 
     }

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Dijstra
 {
-    class Brodforst : Player
+    class AStjerne : Player
     {
-        Queue<Tile> SearchArea = new Queue<Tile>();
+        int BestCost;
+        List<Tile> Open = new List<Tile>();
+        int counter = 0;
         Tile NextTile;
 
         override public void FindPath(Map map, int x, int y)
@@ -18,29 +20,45 @@ namespace Dijstra
             map.MapArray[x, y].Visited = true;
             while (map.GoalX != x || map.GoalY != y)
             {
-
                 map.GetConnections(map.MapArray[x, y]);
-                for (int i = 0; i < MaxConnections;i++)
+                for (int i = 0; i < MaxConnections; i++)
                 {
                     if (map.MapArray[x, y].Connections[i] != null && map.MapArray[x, y].Connections[i].Solid != true
                         && map.MapArray[x, y].Connections[i].Visited != true)
                     {
-                        SearchArea.Enqueue(map.MapArray[x, y].Connections[i]);
+
+                        Open.Add(map.MapArray[x, y].Connections[i]);
                         
+
                         map.MapArray[x, y].Connections[i].Visited = true;
                         map.MapArray[x, y].Connections[i].StepsFromStart = AwayFromstart + 1;
+                        map.MapArray[x, y].Connections[i].CalcTotalCost();
                     }
                 }
-
-                NextTile = SearchArea.Dequeue();
+                foreach (Tile tile in Open)
+                {
+                    if (tile.TotalCost < BestCost || counter == 0)
+                    {
+                        BestCost = tile.TotalCost;
+                        BestOption = counter;
+                    }
+                    counter++;
+                }
+                Route.Add(Open.ElementAt(BestOption));
+                NodesVisited++;
+                NextTile = Open.ElementAt(BestOption);
+                Open.RemoveAt(BestOption);
+                counter = 0;
+                BestOption = 0;
                 x = NextTile.X;
                 y = NextTile.Y;
-                Route.Add(map.MapArray[x, y]);
-                NodesVisited++;
                 AwayFromstart = NextTile.StepsFromStart;
+
+
             }
             map.MapArray[x, y].Symbol = 'm';
-            while (AwayFromstart != 0) {
+            while (AwayFromstart != 0)
+            {
                 map.GetConnections(map.MapArray[x, y]);
                 for (int i = 0; i < MaxConnections; i++)
                 {
@@ -61,10 +79,9 @@ namespace Dijstra
             {
                 Finish.Symbol = 'p';
             }
-
         }
 
-        public Brodforst(int maxConnections) : base(maxConnections)
+        public AStjerne (int maxConnections) : base(maxConnections)
         {
         }
     }
