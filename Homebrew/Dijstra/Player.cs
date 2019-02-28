@@ -8,13 +8,13 @@ namespace Dijstra
 {
     class Player
     {
-        List<Tile> Route = new List<Tile>();
-        List<int> Branches = new List<int>(); 
-        int BestOption;
-        int ShortestDistance = -1;
-        int AmountOfConnections = 0;
-        int MaxConnections;
-        public void FindPath(Map map, int x, int y)
+        protected List<Tile> Route = new List<Tile>();
+        protected List<int> Branches = new List<int>(); 
+        protected int BestOption;
+        protected int ShortestDistance = -1;
+        protected int AmountOfConnections = 0;
+        protected int MaxConnections;
+        virtual public void FindPath(Map map, int x, int y)
         {
             int PX;
             Route.Add(map.MapArray[x, y]);
@@ -75,5 +75,6 @@ namespace Dijstra
         {
             MaxConnections = maxConnections;
         }
-    }
+    } 
+
 }

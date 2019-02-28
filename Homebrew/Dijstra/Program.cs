@@ -10,12 +10,12 @@ namespace Dijstra
     {
         static void Main(string[] args)
         {
-            Map TestMap = new Map(200, 200);
+            Map TestMap = new Map(20, 20);
             MapPrinter TestPrinter = new MapPrinter();
-            Player TestDude = new Player(4);
+            Player TestDude = new Brodforst(4);
             TestMap.MakeEverythingFloor();
             TestMap.BuildWalls();
-            TestMap.SetGoal(180, 117);
+            TestMap.SetGoal(10, 10);
             TestMap.MapArray[1, 14] = new Wall(1,14);
             TestMap.MapArray[2, 14] = new Wall(2, 14);
             TestMap.MapArray[3, 14] = new Wall(3, 14);
