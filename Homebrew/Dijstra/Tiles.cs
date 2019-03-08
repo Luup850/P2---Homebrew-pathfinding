@@ -39,7 +39,7 @@ namespace Dijstra
         }
         public void CalcTotalCost()
         {
-            TotalCost = StepsFromStart+2*StepsToGoal;
+            TotalCost = StepsFromStart+StepsToGoal;
         }
 
     }

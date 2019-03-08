@@ -38,7 +38,9 @@ namespace Dijstra
                 NodesVisited++;
                 AwayFromstart = NextTile.StepsFromStart;
             }
+            
             map.MapArray[x, y].Symbol = 'm';
+            Route.Add(map.MapArray[x, y]);
             while (AwayFromstart != 0) {
                 map.GetConnections(map.MapArray[x, y]);
                 for (int i = 0; i < map.MapArray[x, y].Connections.Count; i++)
@@ -52,6 +54,7 @@ namespace Dijstra
                             NextTile = map.MapArray[x, y].Connections.ElementAt(i);
                             x = NextTile.X;
                             y = NextTile.Y;
+                            
                         }
                     }
                 }

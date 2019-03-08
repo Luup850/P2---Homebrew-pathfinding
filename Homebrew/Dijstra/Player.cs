@@ -8,7 +8,7 @@ namespace Dijstra
 {
     class Player
     {
-        protected List<Tile> Route = new List<Tile>();
+        public List<Tile> Route = new List<Tile>();
         protected List<int> Branches = new List<int>(); 
         protected int BestOption;
         protected int ShortestDistance = -1;
@@ -63,12 +63,15 @@ namespace Dijstra
 
                     Branches.RemoveAt(Branches.Count()-1);
                 }
+                NodesVisited++;
                 AmountOfConnections = 0;
             }
-            foreach (Tile Finish in Route)
+            map.MapArray[x, y].Symbol = 'm';
+            for (int i = 0; i+1 < Route.Count; i++)
             {
-                Finish.Symbol = 'p';
+                Route.ElementAt(i).Symbol = 'p';
             }
+            
 
         }
         public Player ()

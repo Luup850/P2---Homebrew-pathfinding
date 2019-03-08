@@ -34,11 +34,13 @@ namespace Dijstra
                         map.MapArray[x, y].Connections.ElementAt(i).CalcTotalCost();
                     }
                 }
-                foreach (Tile tile in Open)
+                for(int i = 0; i < Open.Count; i++)
                 {
-                    if (tile.TotalCost < BestCost || counter == 0)
+
+                
+                    if (Open.ElementAt(i).TotalCost < BestCost || counter == 0)
                     {
-                        BestCost = tile.TotalCost;
+                        BestCost = Open.ElementAt(i).TotalCost;
                         BestOption = counter;
                     }
                     counter++;
@@ -55,6 +57,7 @@ namespace Dijstra
 
 
             }
+            Route.Add(map.MapArray[x, y]);
             map.MapArray[x, y].Symbol = 'm';
             while (AwayFromstart != 0)
             {
