@@ -84,18 +84,20 @@ namespace Dijstra
                     //If the node has been scanned, then its a possible route back.
                     if ( map.MapArray[x, y].Connections.ElementAt(i).Visited == true)
                     {
-                        //Check 
+                        //Find the node with the shortest distance from start, compared to the other connected nodes.
                         if (map.MapArray[x, y].Connections.ElementAt(i).StepsFromStart < AwayFromstart)
                         {
                             Route.Add(map.MapArray[x, y].Connections.ElementAt(i)); 
-                            AwayFromstart = map.MapArray[x, y].Connections.ElementAt(i).StepsFromStart;
+                            AwayFromstart = map.MapArray[x, y].Connections.ElementAt(i).StepsFromStart; //Set AwayFromstart to current since it is the shortest distance atm.
                             NextTile = map.MapArray[x, y].Connections.ElementAt(i);
-                            x = NextTile.X;
-                            y = NextTile.Y;
+                            x = NextTile.X; //Move x to next tile
+                            y = NextTile.Y; //Move y to next tile
                         }
                     }
                 }
             }
+
+            //Set the route that has been found, nodes symbol to P so it can be printed.
             for(int i = 0; i < Route.Count;i++) 
             {
                 Route.ElementAt(i).Symbol = 'p';
