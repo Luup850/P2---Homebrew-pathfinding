@@ -15,9 +15,9 @@ namespace Dijstra
         /// <summary>
         /// Finds a path to the goal
         /// </summary>
-        /// <param name="map"></param>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
+        /// <param name="map">Map that the player needs to search</param>
+        /// <param name="x">X start position</param>
+        /// <param name="y">Y start position</param>
         virtual public void FindPath(Map map, int x, int y)
         {
 
