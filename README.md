@@ -1,2 +1,2 @@
-# P2TestStuff
+# P2 - Homebrew pathfinding
 Pathfinder algorithm tests
